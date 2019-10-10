@@ -1,0 +1,25 @@
+{
+	"name": "Copy Cloudinary Photobooth CLI Command",
+	"description": "Copies the user info to the clipboard when they register at Cloudinary for the CloudyCAM CLI.",
+	"version": "1.0",
+	"manifest_version": 2,
+	"homepage_url": "https://cloudinary.com/",
+	"icons": {
+		"16": "icon/16x16.png",
+		"48": "icon/48x48.png",
+		"128": "icon/128x128.png"
+	},
+	"content_scripts": [
+		{
+			"js": ["inject.js"],
+			"matches": ["https://cloudinary.com/users/register/free"]
+		}
+	],
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"browser_action": {
+		"default_icon": "icon/128x128.png"
+	},
+	"permissions": ["activeTab"]
+}
